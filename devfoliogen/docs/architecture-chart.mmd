@@ -1,0 +1,26 @@
+flowchart TD
+    A["User"] --> B["Landing Page<br/>Enter GitHub Username"]
+    B --> C["Dynamic Portfolio Route<br/>/[username]"]
+
+    C --> D["Internal API Layer"]
+    D --> D1["Profile API"]
+    D --> D2["Projects API"]
+    D --> D3["About API"]
+    D --> D4["PRs / Contributions API"]
+
+    D1 --> E["Profile Service"]
+    D2 --> E
+    D3 --> E
+    D4 --> E
+
+    E --> F1["GitHub Data Fetchers"]
+    E --> F2["AI Content Generator<br/>(Optional)"]
+    E --> F3["Cache Layer"]
+
+    F1 --> G1["GitHub REST / GraphQL APIs"]
+    F2 --> G2["Groq API"]
+    F3 --> G3["Database / In-Memory Store"]
+
+    E --> H["Normalized Portfolio Data"]
+    H --> I["Portfolio UI Components"]
+    I --> J["Rendered Developer Portfolio"]
